@@ -45,7 +45,7 @@ import { CommonModule } from '@angular/common';
       </div>
 
       <!-- Projets cachés au début, affichés avec *ngIf -->
-      <div class="list-projets hidden-projets" *ngIf="afficherTout">
+      <div class="list-projets hidden-projets">
         <div class="projet">
           <img src="assets/ExamPrepa.png" alt="Projet Académique">
           <div class="etape">
@@ -88,7 +88,7 @@ import { CommonModule } from '@angular/common';
       </div>
 
       <!-- Bouton "Et bien d'autres !" -->
-      <p *ngIf="!afficherTout" class="others" (click)="afficherTout = true" style="cursor:pointer;">
+      <p class="others" style="cursor:pointer;">
         Et bien d'autres !
       </p>
     </div>
@@ -96,5 +96,4 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent {
-  afficherTout = false;
 }
