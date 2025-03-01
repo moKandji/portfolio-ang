@@ -1,0 +1,85 @@
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    margin-right: 130px;
+    margin-left: 130px;
+    margin-bottom: 50px;
+  }
+  .sub-title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .contact-left {
+    flex: 1;
+    text-align: left;
+  }
+  .contact-right {
+    flex: 1;
+    text-align: right;
+  }
+  .contact-left p {
+    margin-top: 30px;
+  }
+  .contact-left p i {
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+  }
+  .social {
+    margin-top: 30px;
+  }
+  .social a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+  }
+  .social a:hover {
+    color: #ff004f;
+    transform: translateY(-5px);
+  }
+  .cv.cv2 {
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    background: #ff004f;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+  form .cv2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .success-message {
+    color: #4CAF50;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .success-message {
+    color: #4CAF50;
+    font-size: 18px;
+    margin-top: 15px;
+  }

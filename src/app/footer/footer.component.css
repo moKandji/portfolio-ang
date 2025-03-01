@@ -1,0 +1,17 @@
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+  }
+  
+  .copyright i {
+    color: #ff004f;
+  }
+  
+  .copyright .highlight {
+    color: #ff004f;
+    font-weight: bold;
+  }
