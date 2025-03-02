@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -88,7 +89,7 @@ import { CommonModule } from '@angular/common';
       </div>
 
       <!-- Bouton "Et bien d'autres !" -->
-      <p *ngIf="!afficherTout" class="others" (click)="afficherTout = true" style="cursor:pointer;">
+      <p *ngIf="!afficherTout" class="others" (click)="setAfficherTout()" style="cursor:pointer;">
         Et bien d'autres !
       </p>
     </div>
@@ -97,4 +98,11 @@ import { CommonModule } from '@angular/common';
 })
 export class PortfolioComponent {
   afficherTout = false;
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  setAfficherTout(): void {
+    this.afficherTout = true;
+    this.cdr.detectChanges();
+  }
 }
