@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef } from '@angular/core';
+import { Component, NgZone, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -25,7 +24,8 @@ import { ChangeDetectorRef } from '@angular/core';
           <p class="tab-links" [ngClass]="{ 'active-link': activeTab === 'competences' }" (click)="setActiveTab('competences')">Certifications</p>
         </div>
 
-        <div class="tab-contents" [ngClass]="{ 'active-tab': activeTab === 'formation' }" id="formation">
+        <div class="tab-contents" [style.display]="activeTab === 'formation' ? 'block' : 'none'">
+
           <ul>
             <li><span>Polytech Lyon : 2024 - 2027</span><br>Cycle ingénieur informatique par apprentissage</li>
             <li><span>EPF - Ecole d'ingénieur-e-s : 2021 - 2024</span><br>Classe préparatoire Scientifique aux Grandes Ecoles (CPGE) & une année en cycle ingénieur généraliste</li>
@@ -54,10 +54,12 @@ import { ChangeDetectorRef } from '@angular/core';
 export class AboutComponent {
   activeTab: string = 'formation';
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private ngZone: NgZone, private cdr: ChangeDetectorRef) {}
 
   setActiveTab(tabname: string) {
-    this.activeTab = tabname;
-    this.cdr.detectChanges();
+    this.ngZone.run(() => {
+      this.activeTab = tabname;
+      this.cdr.detectChanges();
+    });
   }
 }

@@ -67,18 +67,21 @@ export class ContactComponent {
   private sendEmail(): void {
     this.loading = true;
 
-    const formData = new FormData();
-    formData.append("name", this.contactForm.value.name);
-    formData.append("email", this.contactForm.value.email);
-    formData.append("message", this.contactForm.value.message);
+    const formData = {
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
+      message: this.contactForm.value.message
+    };    
 
     fetch(this.formspreeURL, {
       method: "POST",
-      body: formData,
+      body: JSON.stringify(formData),
       headers: {
-        "Accept": "application/json"
-      }
-    })
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      mode: "cors"
+    })    
     .then(response => {
       if (response.ok) {
         this.msg = "✅ Message envoyé avec succès !";
