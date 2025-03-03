@@ -75,13 +75,17 @@ export class ContactComponent {
 
     fetch(this.formspreeURL, {
       method: "POST",
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        name: this.contactForm.value.name,
+        email: this.contactForm.value.email,
+        message: this.contactForm.value.message
+      }),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      mode: "cors"
-    })    
+      mode: "cors" // Eviter les problèmes de CORS en production
+    })      
     .then(response => {
       if (response.ok) {
         this.msg = "✅ Message envoyé avec succès !";

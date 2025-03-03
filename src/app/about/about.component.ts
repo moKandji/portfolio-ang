@@ -25,7 +25,6 @@ import { Component, NgZone, ChangeDetectorRef } from '@angular/core';
         </div>
 
         <div class="tab-contents" [style.display]="activeTab === 'formation' ? 'block' : 'none'">
-
           <ul>
             <li><span>Polytech Lyon : 2024 - 2027</span><br>Cycle ingénieur informatique par apprentissage</li>
             <li><span>EPF - Ecole d'ingénieur-e-s : 2021 - 2024</span><br>Classe préparatoire Scientifique aux Grandes Ecoles (CPGE) & une année en cycle ingénieur généraliste</li>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgZone } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -99,11 +100,12 @@ import { NgZone } from '@angular/core';
 export class PortfolioComponent {
   afficherTout = false;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private cdr: ChangeDetectorRef, private ngZone: NgZone) {}
 
   setAfficherTout(): void {
     this.ngZone.run(() => {
       this.afficherTout = true;
+      this.cdr.detectChanges();
     });
 }
 }
